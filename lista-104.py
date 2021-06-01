@@ -33,8 +33,16 @@ print(resultado)
 # 2) Crie uma funcao que verifica se duas strings são palindromes perfeitas. Faca as 'limpeza'/sanitizacao necessarias.  Retorne True ou False.
 #
 # OBS.: Utilize apenas o que foi estudado ate agora
-def comparacao_strings(palavra1, palavra1_invertida, palavra2, palavra2_invertida):
-    if palavra1 == palavra1_invertida and palavra2 == palavra2_invertida:
+def comparacao_strings(palavra1, palavra2):
+    palavra1_comparacao = palavra1.replace(' ', '')
+    palavra1_comparacao = palavra1_comparacao.lower()
+    palavra1_invertida = palavra1_comparacao[::-1]
+
+    palavra2_comparacao = palavra2.replace(' ', '')
+    palavra2_comparacao = palavra2_comparacao.lower()
+    palavra2_invertida = palavra2_comparacao[::-1]
+
+    if palavra1_comparacao == palavra1_invertida and palavra2_comparacao == palavra2_invertida:
         print(True)
     else:
         print(False)
@@ -44,13 +52,4 @@ print('Digite duas strings: ')
 palavra1 = input()
 palavra2 = input()
 
-palavra1_comparacao = palavra1.replace(' ', '')
-palavra1_comparacao = palavra1_comparacao.lower()
-palavra1_comparacao_invertida = palavra1_comparacao[::-1]
-
-palavra2_comparacao = palavra2.replace(' ', '')
-palavra2_comparacao = palavra2_comparacao.lower()
-palavra2_comparacao_invertida = palavra2_comparacao[::-1]
-
-resposta = comparacao_strings(palavra1_comparacao, palavra1_comparacao_invertida, palavra2_comparacao, palavra2_comparacao_invertida)
-print('\n'+resposta)
+comparacao_strings(palavra1, palavra2)
