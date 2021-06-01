@@ -9,12 +9,12 @@ book3 = 'Fooled by Randomness by Nassim Nicholas Taleb, 2001'
 # 1) Extraia o titulo do livro da string
 print(book1.split('by')[0])
 print(book2.split('by')[0])
-print(book3.split('by')[0])
+print(book3.split('by N')[0])
 
 # 2) Salve o titulo de cada livro em uma variável
 titulo1 = book1.split('by')[0].strip()# remover espaçõs em bransco strip
 titulo2 = book2.split('by')[0].strip()
-titulo3 = book3.split('by')[0].strip()
+titulo3 = book3.split('by N')[0].strip()
 
 # 3) Quantos caracteres cada título tem?
 print('\nQuantidade de caracteres do título 1:',len(titulo1))
@@ -47,13 +47,26 @@ palindrome_two = 'Natan'
 palindrome_three = 'luz azul'
 palindrome_four = 'caneta azul'
 
-palindromes = [palindrome_one, palindrome_two, palindrome_three, palindrome_four]
+palindrome_comparacao = palindrome_one.replace(' ', '')
+palindrome_comparacao = palindrome_comparacao.lower()
+palindrome_comparacao_invertida = palindrome_comparacao[::-1]
+resposta = palindrome_comparacao == palindrome_comparacao_invertida
+print(palindrome_one,'é palindrome?',resposta)
 
-for p in palindromes:
-    string_comparacao = p.replace(' ', '')
-    string_comparacao = string_comparacao.lower()
-    string_comparacao_invertida = string_comparacao[::-1]
-    if string_comparacao == string_comparacao_invertida:
-        print(p+' é palindrome!')
-    else:
-        print(p+' não é palindrome!')
+palindrome_comparacao = palindrome_two.replace(' ', '')
+palindrome_comparacao = palindrome_comparacao.lower()
+palindrome_comparacao_invertida = palindrome_comparacao[::-1]
+resposta = palindrome_comparacao == palindrome_comparacao_invertida
+print(palindrome_two,'é palindrome?',resposta)
+
+palindrome_comparacao = palindrome_three.replace(' ', '')
+palindrome_comparacao = palindrome_comparacao.lower()
+palindrome_comparacao_invertida = palindrome_comparacao[::-1]
+resposta = palindrome_comparacao == palindrome_comparacao_invertida
+print(palindrome_three,'é palindrome?',resposta)
+
+palindrome_comparacao = palindrome_four.replace(' ', '')
+palindrome_comparacao = palindrome_comparacao.lower()
+palindrome_comparacao_invertida = palindrome_comparacao[::-1]
+resposta = palindrome_comparacao == palindrome_comparacao_invertida
+print(palindrome_four,'é palindrome?',resposta)
