@@ -1,8 +1,3 @@
-#DESAFIO!!!
-#1) Crie uma lista com os 1000 primeiros numeros pares. Não use loop!
-#2) Crie uma lista com os numeros de 0 ate 99999999999999999999999999. Depois crie um loop para #percorrer a lista ateh encontrar o primeiro multiplo de 5.
-#OBS.: Use sua linguagem de programacao favorita. Nao use funcoes/metodos prontos.
-
 ###
 # Exercicios
 ###
@@ -51,21 +46,37 @@ for i in lista_impares:
 # 4) Conte quantas palavras de tamanho >= 5 existe nessa string. Faca uma vez sem usar list comprehension e depois usando list comprehension.
 print()
 texto = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-i = 0
+texto = texto.replace(',', ' ')
+texto = texto.replace('.', ' ')
+texto = texto.split()
+palavra_maior_igual_5 = []
+
+print('Sem list comprehension:\n')
 qtde = 0
-for t in texto:
-    if t == ' ':
-        if i >= 5:
-            qtde += 1
-            i = 0
-    i += 1
-print(qtde)
+for palavra in texto:
+    if len(palavra) >= 5:
+        qtde += 1
+        palavra_maior_igual_5.append(palavra)
+
+print('Quantidade de palavras:',qtde)
+
+print(f'\nPalavras maiores ou iguais a 5: \n{palavra_maior_igual_5}\n')
+
+print('Com list comprehension:\n')
+
+palavra_maior_igual_5 = [palavra for palavra in texto if len(palavra) >= 5]
+
+qtde = len(palavra_maior_igual_5)
+
+print('Quantidade de palavras:',qtde)
+
+print(f'\nPalavras maiores ou iguais a 5: \n{palavra_maior_igual_5}\n')
 
 # 5) Usando list comprehension, crie uma lista com os multiplos de 3 de 0 ate 100
 print()
 multiplos = [numero for numero in range(100) if numero % 3 == 0]
-for i in multiplos:
-    print(i)
+
+print(f'Multiplos de 3 de 0 até 100:\n{multiplos}\n')
 
 # 6) Faca uma funcao para encontrar os numeros primos no intervalo [2, 10), mas nao utilize a clausula else do for
 print()
